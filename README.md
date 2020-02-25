@@ -39,7 +39,7 @@ ssh-copy-id user@serverip
 ## Usage
 
 ```bash
-git clone https://github.com/mjose-portfolio/ex-server-deploy.git && cd ex-server-deploy.git && sh setup.sh
+git clone https://github.com/mjose-portfolio/ex-server-deploy.git && cd ex-server-deploy && sh setup.sh
 ```
 
 The script will ask for:
