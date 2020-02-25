@@ -1,0 +1,5 @@
+[controller]
+control ansible_connection=local
+
+[webserver]
+<host> ansible_user=<user>
