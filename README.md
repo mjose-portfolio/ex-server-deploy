@@ -1,11 +1,18 @@
 # ex-server-deploy
 
-This script will remotely install nginx, apache and webmin, configure them and start the services.
+This script will remotely install nginx, apache, webmin and fail2ban, configure them and start the services.
 It will also configure the firewall to allow connections on the ports:
 
 - Nginx: 80 and 443
 - Apache: 8080
 - Webmin: 10000
+
+To add/modify the firewall configuration, the file is `firewall_conf.sh`.
+
+To secure the server, fail2ban is used to ban the ips with too many failed login attempts in the system. The webmin and ssh ports are checked.
+To add/modify the configuration, see the official documentation.the file is `jail.local`.
+
+Fail2ban official documentation: https://www.fail2ban.org/wiki/index.php/MANUAL_0_8#Usage
 
 ## Requeriments
 

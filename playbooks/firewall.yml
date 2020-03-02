@@ -3,4 +3,23 @@
   become: true
   tasks:
     - name: Apply new firewall configuration
-      script: ../firewall_conf.sh
+      script: firewall_conf.sh
+    - name: Create directory for cron scripts files
+      file: >
+        path=/cron_scripts/
+        state=directory
+        mode=0744
+    - name: Copy script configuration iptables for cron
+      copy: >
+        src=firewall_conf.sh
+        dest=/cron_scripts/firewall_conf.sh
+        mode=0744
+    - name: Set var PATH=/usr/sbin/
+      cron: >
+        name=PATH
+        env=yes
+        job=/usr/local/bin:/usr/bin:/bin
+    - name: Schedule job in crontab
+      cron: >
+        job=/cron_scripts/firewall_conf.sh
+        special_time=reboot

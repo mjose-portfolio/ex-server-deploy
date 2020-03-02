@@ -39,5 +39,6 @@ pip install ansible
 ansible-playbook playbooks/loadbalancer.yml --extra-vars "ansible_sudo_pass=$PASSW"
 ansible-playbook playbooks/webserver.yml --extra-vars "ansible_sudo_pass=$PASSW"
 ansible-playbook playbooks/webmin.yml --extra-vars "ansible_sudo_pass=$PASSW"
+ansible-playbook playbooks/fail2ban.yml --extra-vars "ansible_sudo_pass=$PASSW"
 ansible-playbook playbooks/firewall.yml --extra-vars "ansible_sudo_pass=$PASSW"
 rm $DEV_FILE
